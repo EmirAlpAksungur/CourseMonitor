@@ -41,14 +41,14 @@ export const layouts = {
     { w: 4, h: 7, x: 0, y: 28, i: "7", moved: false, static: false },
   ],
   xxs: [
-    { w: 2, h: 9, x: 0, y: 35, i: "0", moved: false, static: false },
-    { w: 2, h: 7, x: 0, y: 44, i: "1", moved: false, static: false },
-    { w: 2, h: 7, x: 0, y: 51, i: "2", moved: false, static: false },
-    { w: 2, h: 7, x: 0, y: 0, i: "3", moved: false, static: false },
-    { w: 2, h: 7, x: 0, y: 7, i: "4", moved: false, static: false },
-    { w: 2, h: 7, x: 0, y: 14, i: "5", moved: false, static: false },
-    { w: 2, h: 7, x: 0, y: 21, i: "6", moved: false, static: false },
-    { w: 2, h: 7, x: 0, y: 28, i: "7", moved: false, static: false },
+    { w: 2, h: 9, x: 0, y: 30, i: "0", moved: false, static: false },
+    { w: 2, h: 6, x: 0, y: 39, i: "1", moved: false, static: false },
+    { w: 2, h: 4, x: 0, y: 45, i: "2", moved: false, static: false },
+    { w: 2, h: 6, x: 0, y: 0, i: "3", moved: false, static: false },
+    { w: 2, h: 6, x: 0, y: 6, i: "4", moved: false, static: false },
+    { w: 2, h: 6, x: 0, y: 12, i: "5", moved: false, static: false },
+    { w: 2, h: 6, x: 0, y: 18, i: "6", moved: false, static: false },
+    { w: 2, h: 6, x: 0, y: 24, i: "7", moved: false, static: false },
   ],
 };
 
