@@ -1,0 +1,82 @@
+@import "../../palette/palette.scss";
+@import "../box/box.scss";
+
+.employee-details {
+  width: 100%;
+  height: 100%;
+  @include defaultBox;
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  overflow: hidden;
+  &__title {
+    flex: 0 0 100%;
+    margin-bottom: 12px;
+    font-size: 2rem;
+    font-weight: 600;
+    &__title {
+      font-weight: 400;
+      @include themify($themes) {
+        color: themed("grays") !important;
+      }
+    }
+    &__email {
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__current-score {
+    flex: 0 0 100%;
+    display: flex;
+  }
+  &__skills {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    padding-top: 12px;
+    &__item {
+      @include themify($themes) {
+        color: themed("text") !important;
+      }
+    }
+    &__item-primary {
+      @include themify($themes) {
+        border-color: themed("primary") !important;
+      }
+    }
+    &__item-secondary {
+      @include themify($themes) {
+        border-color: themed("secondary") !important;
+      }
+    }
+    &__item-error {
+      @include themify($themes) {
+        border-color: themed("error") !important;
+      }
+    }
+    &__item-warning {
+      @include themify($themes) {
+        border-color: themed("warning") !important;
+      }
+    }
+    &__item-info {
+      @include themify($themes) {
+        border-color: themed("info") !important;
+      }
+    }
+    &__item-success {
+      @include themify($themes) {
+        border-color: themed("success") !important;
+      }
+    }
+    &__item-grays {
+      @include themify($themes) {
+        border-color: themed("grays") !important;
+      }
+    }
+  }
+}

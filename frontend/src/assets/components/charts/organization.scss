@@ -1,0 +1,31 @@
+@import "../../palette/palette.scss";
+@import "../popup/popup.scss";
+@import "../box/box.scss";
+.organization {
+  @include defaultBox;
+
+  .highcharts-background {
+    @include themify($themes) {
+      fill: themed("box-background") !important;
+    }
+  }
+  .highcharts-button-box {
+    @include themify($themes) {
+      fill: themed("box-background");
+    }
+  }
+  .highcharts-button-symbol {
+    @include themify($themes) {
+      stroke: themed("text");
+    }
+  }
+  @include highchartContextMenu;
+}
+
+.organization-container {
+  &__header {
+    margin-bottom: 12px;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,29 @@
+@import "../../palette/palette.scss";
+
+@mixin popUpBackGroundColor() {
+  @include themify($themes) {
+    background-color: themed("bg-header");
+    color: themed("text");
+  }
+}
+
+@mixin highchartContextMenu() {
+  .highcharts-contextmenu {
+    .highcharts-menu {
+      @include themify($themes) {
+        background-color: themed("bg-header") !important;
+        box-shadow: 0px 0px 5px themed("warning") !important;
+      }
+      li {
+        @include themify($themes) {
+          color: themed("text") !important;
+        }
+        &:hover {
+          @include themify($themes) {
+            background-color: themed("warning") !important;
+          }
+        }
+      }
+    }
+  }
+}

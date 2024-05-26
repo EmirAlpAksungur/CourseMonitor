@@ -1,0 +1,77 @@
+@import "../palette/palette.scss";
+@import "../components//button/btn.scss";
+.app-header {
+  min-width: 300px;
+  justify-content: space-between;
+  padding: 8px 16px;
+  border-bottom: 1px solid;
+  overflow: hidden;
+  @include themify($themes) {
+    background-color: themed("bg-header");
+    border-color: themed("border-header");
+  }
+  &__left {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    &__btn {
+      @include btnText;
+    }
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    &__btn-theme {
+      @include btnText;
+      width: 31px;
+      height: 31px;
+      &__dark-mode {
+        position: relative;
+        right: -7.5px;
+        color: white;
+      }
+      &__light-mode {
+        position: relative;
+        right: 7.5px;
+        color: black;
+      }
+    }
+    &__btn {
+      @include btnText;
+      gap: 8px;
+      &__user-name {
+        @include themify($themes) {
+          color: themed("text");
+        }
+        font-size: 1.2rem;
+      }
+    }
+  }
+  &__mobile-menu {
+    display: none;
+    &__btn {
+      @include btnText;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .app-header {
+    &__left {
+      display: none;
+    }
+    &__mobile-menu {
+      display: inline-block;
+      align-self: center;
+      @include themify($themes) {
+        color: themed("text");
+      }
+      &__menu-item {
+        width: 170px;
+        font-size: 1.2rem !important;
+        min-height: auto !important;
+      }
+    }
+  }
+}

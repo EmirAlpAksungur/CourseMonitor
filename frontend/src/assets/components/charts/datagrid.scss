@@ -1,0 +1,107 @@
+@import "../button/btn.scss";
+@import "../box/box.scss";
+@import "../popup/popup.scss";
+.MuiButton-icon {
+  @include btnOutlined;
+  align-items: center;
+  margin: 0 !important;
+}
+.datagrid-container {
+  @include defaultBox;
+}
+
+.MuiDataGrid-root {
+  //   border: none !important;
+  svg {
+    @include themify($themes) {
+      fill: themed("text");
+    }
+  }
+}
+
+.MuiDataGrid-columnHeaders {
+  @include themify($themes) {
+    background-color: themed("box-background") !important;
+    color: themed("text");
+  }
+  div {
+    @include themify($themes) {
+      background-color: themed("error") !important;
+    }
+  }
+}
+.MuiDataGrid-row {
+  div {
+    @include themify($themes) {
+      background-color: themed("warning") !important;
+    }
+  }
+}
+.MuiDataGrid-cell {
+  @include themify($themes) {
+    color: themed("text");
+  }
+}
+.MuiDataGrid-panelWrapper {
+  @include popUpBackGroundColor;
+  * {
+    @include themify($themes) {
+      color: themed("text");
+    }
+  }
+}
+
+.MuiDataGrid-menu {
+  @include popUpBackGroundColor;
+}
+
+.datagrid-container-child {
+  .MuiDataGrid-root {
+    border: none;
+    // border: 1px solid !important;
+    @include themify($themes) {
+      border-color: themed("text") !important;
+    }
+  }
+  .MuiDataGrid-columnHeaders {
+    @include themify($themes) {
+      color: themed("text");
+    }
+    div {
+      @include themify($themes) {
+        background-color: themed("error") !important;
+      }
+    }
+  }
+  .MuiDataGrid-row {
+    div {
+      @include themify($themes) {
+        background-color: themed("success") !important;
+      }
+    }
+  }
+  .MuiDataGrid-toolbarContainer {
+    @include themify($themes) {
+      background-color: themed("grays") !important;
+    }
+  }
+}
+
+.MuiDataGrid-detailPanel {
+  @include themify($themes) {
+    background-color: themed("box-background") !important;
+  }
+}
+
+.datagrid-container-top-list {
+  .MuiDataGrid-columnHeaders {
+    div {
+      @include themify($themes) {
+        background-color: themed("success") !important;
+      }
+    }
+  }
+  .MuiDataGrid-root {
+    border: none !important;
+  }
+}

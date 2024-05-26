@@ -1,0 +1,52 @@
+@import "../../palette/palette.scss";
+@import "../box/box.scss";
+@import "../popup/popup.scss";
+@mixin highChartTheme() {
+  .highcharts-background {
+    @include themify($themes) {
+      fill: themed("box-background") !important;
+    }
+  }
+  .highcharts-axis-labels {
+    text {
+      @include themify($themes) {
+        fill: themed("text") !important;
+      }
+    }
+  }
+  .highcharts-button-box {
+    @include themify($themes) {
+      fill: themed("box-background");
+    }
+  }
+  .highcharts-button-symbol {
+    @include themify($themes) {
+      stroke: themed("text");
+    }
+  }
+  .highcharts-axis-title {
+    @include themify($themes) {
+      fill: themed("text") !important;
+    }
+  }
+  @include highchartContextMenu;
+}
+
+.solid-chart {
+  @include highChartTheme;
+  &__plot-options {
+    @include themify($themes) {
+      color: themed("text");
+    }
+    font-size: 18px;
+  }
+  &__credits {
+    @include themify($themes) {
+      color: themed("text-secondary");
+    }
+  }
+}
+
+.bar-chart {
+  @include highChartTheme;
+}

@@ -1,0 +1,77 @@
+@import "../../palette/palette.scss";
+@import "../../components//button/btn.scss";
+@import "../../components//container.scss";
+@import "../../components/box/box.scss";
+.company-container {
+  min-height: calc(100vh - 57px);
+  width: 100%;
+  @include themify($themes) {
+    background-color: themed("bg");
+    color: themed("text");
+  }
+  padding: 32px 0px;
+  display: flex;
+  justify-content: center;
+  &__body {
+    @include container-widths;
+
+    &__header {
+      @include themify($themes) {
+        background: themed("company-header-bg");
+      }
+      border-radius: 4px;
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      &__content {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 28px;
+        @include themify($themes) {
+          color: themed("reverse-text");
+        }
+        &__header {
+          font-size: 2.4rem;
+          margin-bottom: 16px;
+          line-height: 1.27;
+          font-weight: 600;
+        }
+        &__body {
+          font-weight: 400;
+          font-size: 1.4rem;
+          line-height: 1.57;
+          margin-bottom: 16px;
+          max-width: 100%;
+          text-transform: capitalize;
+        }
+        &__btn-container {
+          &__btn {
+            height: 32.6px;
+            @include btnOutlined;
+            @include themify($themes) {
+              border-color: themed("reverse-text");
+              color: themed("reverse-text");
+            }
+            &:hover {
+              @include themify($themes) {
+                background-color: rgb(248, 196, 140);
+                border-color: themed("reverse-text");
+                color: themed("reverse-text");
+                box-shadow: 0px 0.5px 0.5px rgba(0, 0, 0, 0.239);
+              }
+            }
+          }
+        }
+      }
+      &__img {
+        display: flex;
+        justify-content: end;
+        flex: 1;
+        padding-right: 20px;
+      }
+    }
+  }
+}

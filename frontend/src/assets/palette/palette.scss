@@ -1,0 +1,145 @@
+$light-bg: #fafafb;
+$dark-bg: #121212;
+
+$light-bg-header: #ffffff;
+$dark-bg-header: #1e1e1e;
+
+$light-border-color: #f0f0f0;
+$dark-border-color: rgba(255, 255, 255, 0.05);
+
+$light-text: #000000;
+$dark-text: #ffffff;
+
+$dark-selected-item-color: rgb(210, 100, 21);
+$light-selected-item-color: rgb(242, 112, 19);
+
+$themes: (
+  light: (
+    //text
+    text: $light-text,
+    text-secondary: lighten($light-text, 50),
+    reverse-text: $dark-text,
+    // header
+    bg-header: $light-bg-header,
+    border-header: $light-border-color,
+    // main background
+    bg: $light-bg,
+
+    // button
+    bg-btn-outlined: $light-bg-header,
+    text-btn-outlined: lighten($dark-bg-header, 20),
+    border-btn-outlined: lighten($dark-bg-header, 20),
+    bg-btn-hover-outlined: darken($light-bg-header, 10),
+    text-btn-hover-outlined: lighten($dark-bg-header, 10),
+    border-btn-hover-outlined: lighten($dark-bg-header, 10),
+    bg-btn-contained: lighten($dark-bg-header, 20),
+    text-btn-contained: $light-bg-header,
+    border-btn-contained: $light-bg-header,
+    bg-btn-hover-contained: lighten($dark-bg-header, 10),
+    text-btn-hover-contained: darken($light-bg-header, 10),
+    border-btn-hover-contained: darken($light-bg-header, 10),
+    bg-btn-text: $light-bg-header,
+    text-btn-text: lighten($dark-bg-header, 20),
+    bg-btn-hover-text: darken($light-bg-header, 10),
+    text-btn-hover-text: lighten($dark-bg-header, 10),
+    selected-item-color: $light-selected-item-color,
+
+    company-header-bg:
+      linear-gradient(
+        250.38deg,
+        rgb(255, 244, 230) 2.39%,
+        rgb(255, 176, 102) 34.42%,
+        rgb(242, 112, 19) 60.95%,
+        rgb(204, 82, 6) 84.83%,
+        rgb(128, 40, 0) 104.37%
+      ),
+    //box
+    box-border: rgb(230, 235, 241),
+    box-background: rgb(255, 255, 255),
+    //General
+    primary: #e3f2fd,
+    secondary: #f3e5f5,
+    error: #e57373,
+    warning: #ffb74d,
+    info: #4fc3f7,
+    success: #81c784,
+    grays: #adb5bd,
+  ),
+  dark: (
+    //text
+    text: $dark-text,
+    text-secondary: darken($dark-text, 40),
+    reverse-text: $light-text,
+    // header
+    bg-header: $dark-bg-header,
+    border-header: $dark-border-color,
+    // main background
+    bg: $dark-bg,
+    // button
+    bg-btn-outlined: $dark-bg-header,
+    text-btn-outlined: darken($light-bg-header, 20),
+    border-btn-outlined: darken($light-bg-header, 20),
+    bg-btn-hover-outlined: lighten($dark-bg-header, 10),
+    text-btn-hover-outlined: darken($light-bg-header, 10),
+    border-btn-hover-outlined: darken($light-bg-header, 10),
+    bg-btn-contained: darken($light-bg-header, 20),
+    text-btn-contained: $dark-bg-header,
+    border-btn-contained: $dark-bg-header,
+    bg-btn-hover-contained: darken($light-bg-header, 10),
+    text-btn-hover-contained: lighten($dark-bg-header, 10),
+    border-btn-hover-contained: lighten($dark-bg-header, 10),
+    bg-btn-text: $dark-bg-header,
+    text-btn-text: darken($light-bg-header, 20),
+    bg-btn-hover-text: lighten($dark-bg-header, 10),
+    text-btn-hover-text: darken($light-bg-header, 10),
+    selected-item-color: $dark-selected-item-color,
+
+    company-header-bg:
+      linear-gradient(
+        250.38deg,
+        rgb(50, 34, 26) 2.39%,
+        rgb(125, 67, 25) 34.42%,
+        rgb(210, 100, 21) 60.95%,
+        rgb(233, 136, 58) 84.83%,
+        rgb(248, 196, 140) 104.37%
+      ),
+    //box
+    box-border: rgba(255, 255, 255, 0.05),
+    box-background: rgb(30, 30, 30),
+    //General
+    primary: #42a5f5,
+    secondary: #ab47bc,
+    error: #d32f2f,
+    warning: #f57c00,
+    info: #0288d1,
+    success: #388e3c,
+    grays: #6c757d,
+  ),
+) !default;
+
+$theme-map: null;
+
+@mixin themify($themes: $themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
