@@ -22,8 +22,6 @@ const RGL: React.FC<RGlProps> = ({ content, layouts, ...props }) => {
   const onLayoutChange = (layout: any, layouts: any) => {
     setLayouts({ ...layouts });
   };
-  console.log(JSON.stringify(layout));
-
   return (
     <div
       ref={containerRef}

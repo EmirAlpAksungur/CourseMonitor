@@ -91,7 +91,6 @@ const __setUpComingCourses =
   };
 
 const __datapipe = (data: any) => async (dispatch: AppDispatch) => {
-  console.log(data);
   dispatch(__setActivityHours(data.activity_hours));
   dispatch(
     __setGeneralCompanyStatus(
