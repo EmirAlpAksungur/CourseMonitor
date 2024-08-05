@@ -1,5 +1,3 @@
-url : https://coursemonitoring.netlify.app/
-
 Technologies used in the project
 -REACT
 -TYPESCRIPT
