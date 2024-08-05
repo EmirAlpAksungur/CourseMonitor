@@ -35,10 +35,10 @@
 .solid-chart {
   @include highChartTheme;
   &__plot-options {
+    font-size: 18px;
     @include themify($themes) {
       color: themed("text");
     }
-    font-size: 18px;
   }
   &__credits {
     @include themify($themes) {

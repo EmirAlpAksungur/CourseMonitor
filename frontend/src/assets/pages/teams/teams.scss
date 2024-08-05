@@ -5,13 +5,14 @@
 .teams-container {
   min-height: calc(100vh - 57px);
   width: 100%;
+  padding: 32px 0px;
+  display: flex;
+  justify-content: center;
   @include themify($themes) {
     background-color: themed("bg");
     color: themed("text");
   }
-  padding: 32px 0px;
-  display: flex;
-  justify-content: center;
+
   &__body {
     @include container-widths;
     &__tabs {

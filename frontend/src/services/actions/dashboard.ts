@@ -111,8 +111,8 @@ const __datapipe = (data: any) => async (dispatch: AppDispatch) => {
 export const fetchDashboard = () => async (dispatch: AppDispatch) => {
   try {
     let res = await DashboardService.getDashboards();
-    dispatch(__datapipe(res.data.data));
-    return Promise.resolve(res.status);
+    dispatch(__datapipe(res));
+    return Promise.resolve(res);
   } catch (err: any) {
     dispatch(
       changeNotification({

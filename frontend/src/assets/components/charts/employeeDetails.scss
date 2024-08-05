@@ -4,12 +4,13 @@
 .employee-details {
   width: 100%;
   height: 100%;
-  @include defaultBox;
   padding: 12px;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
   overflow: hidden;
+  @include defaultBox;
+
   &__title {
     flex: 0 0 100%;
     margin-bottom: 12px;

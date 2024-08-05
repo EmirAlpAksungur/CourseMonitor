@@ -2,9 +2,9 @@
 @import "../box/box.scss";
 @import "../popup/popup.scss";
 .MuiButton-icon {
-  @include btnOutlined;
   align-items: center;
   margin: 0 !important;
+  @include btnOutlined;
 }
 .datagrid-container {
   @include defaultBox;
@@ -58,7 +58,6 @@
 .datagrid-container-child {
   .MuiDataGrid-root {
     border: none;
-    // border: 1px solid !important;
     @include themify($themes) {
       border-color: themed("text") !important;
     }
